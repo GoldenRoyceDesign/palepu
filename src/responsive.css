@@ -1,0 +1,49 @@
+@media screen and (max-width: 500px){
+    .carousel-caption{
+        top: 40% !important;
+    }
+
+    .carousel-caption h1{
+        font-size: 2rem !important;
+    }
+
+    .custom-arrow{
+        border: none !important;
+    }
+
+    .home{
+        margin: 10px !important;
+        padding: 0 !important;
+    }
+
+    .home .home-order-col2{
+        flex-direction: column;
+        justify-content: left !important;
+        align-items: flex-start !important;
+    }
+
+    .testimonials-track {
+        display: flex;
+        animation: scroll 10s linear infinite; /* Smooth, infinite scrolling */
+      }
+
+
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-200%); /* Scroll half the track length (duplicates cover the rest) */
+        }
+    }
+
+    .review-layout{
+        flex-direction: column;
+    }
+
+    .review-content {
+        flex: 1; /* Takes the remaining space */
+        min-height: 200px;
+      }
+      
+}
