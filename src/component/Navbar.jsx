@@ -209,7 +209,7 @@ const Navbar = () => {
                                 position: 'fixed',
                                 bottom: '20px',
                                 right: '20px',
-                                width: '350px',
+                                width: '320px',
                                 height: '500px',
                                 background: 'linear-gradient(135deg, #007bff, #0056b3)',
                                 borderRadius: '15px',
