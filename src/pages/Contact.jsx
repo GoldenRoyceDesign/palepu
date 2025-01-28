@@ -1,10 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react'
 import contact from '../assets/contact.png'
 import logo from '../assets/logo.png'
 import location from '../assets/location-vector.png'
 import contactvec from '../assets/contact-vector.png'
 
 const Contact = () => {
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    companyName: '',
+    companyAddress: '',
+    license: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('http://localhost:3001/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Form submitted successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          companyName: '',
+          companyAddress: '',
+          license: '',
+        });
+      } else {
+        alert('Failed to submit the form');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again later.');
+    }
+  };
+
   return (
     <>
       <div className='container mt-5 contact'>
@@ -107,25 +153,28 @@ const Contact = () => {
           {/* Right Section */}
           <div className="col-md-4 d-flex flex-column justify-content-center contact-form">
             <h3 className="mb-3">Fill out the tabs below:</h3>
-            <form className='p-5'>
+            <form className="p-5" onSubmit={handleSubmit}>
               {[
-                { label: "Name", type: "text" },
-                { label: "E-mail", type: "email" },
-                { label: "Phone", type: "tel" },
-                { label: "Company / Pharmacy Name", type: "text" },
-                { label: "Company / Pharmacy Address", type: "text" },
-                { label: "License", type: "text" },
+                { label: "Name", type: "text", name: "name" },
+                { label: "E-mail", type: "email", name: "email" },
+                { label: "Phone", type: "tel", name: "phone" },
+                { label: "Company / Pharmacy Name", type: "text", name: "companyName" },
+                { label: "Company / Pharmacy Address", type: "text", name: "companyAddress" },
+                { label: "License", type: "text", name: "license" },
               ].map((field, index) => (
                 <div className="mb-3" key={index}>
                   <label className="form-label">{field.label}</label>
                   <input
                     type={field.type}
+                    name={field.name}
+                    value={formData[field.name]}
+                    onChange={handleChange}
                     className="form-control"
                     required
                   />
                 </div>
               ))}
-              <div className='text-center'>
+              <div className="text-center">
                 <button type="submit" className="btn btn-warning pe-4 ps-4 rounded-5 text-white">
                   SUBMIT
                 </button>

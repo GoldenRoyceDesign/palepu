@@ -48,7 +48,7 @@
   top: 50%;
   transform: translateY(-50%);
   color: white;
-  text-align: left;
+  text-align: left !important;
   display: flex;
   flex-direction: column;
   gap: 20px;

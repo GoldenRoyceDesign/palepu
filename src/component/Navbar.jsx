@@ -16,7 +16,7 @@ const Navbar = () => {
     const [showChatbot, setShowChatbot] = useState(false);
     const [userMessage, setUserMessage] = useState('');
     const [chatHistory, setChatHistory] = useState([
-        { from: 'bot', text: 'Hello! What is your name?' } // Ask for the name first
+        { from: 'bot', text: 'Hello! What is your name?', timestamp: new Date().toLocaleTimeString() }
     ]);
     const [userName, setUserName] = useState('');
     const [userBranchChoice, setUserBranchChoice] = useState(null);
@@ -29,62 +29,78 @@ const Navbar = () => {
 
     const handleSendMessage = () => {
         if (userMessage.trim()) {
-            // Add user message to the chat history
-            setChatHistory([...chatHistory, { from: 'user', text: userMessage }]);
+            const timestamp = new Date().toLocaleTimeString();
+
+            setChatHistory((prevHistory) => [
+                ...prevHistory,
+                { from: 'user', text: userMessage, timestamp }
+            ]);
+            const userInput = userMessage.toLowerCase().trim();
             setUserMessage('');
 
-            // Handle the chatbot's response based on the current conversation flow
             if (!userName) {
-                // Ask for the name
-                setChatHistory(prevHistory => [
+                setChatHistory((prevHistory) => [
                     ...prevHistory,
-                    { from: 'bot', text: `Nice to meet you, ${userMessage}! How can I assist you today?` }
+                    { from: 'bot', text: `Nice to meet you, ${userMessage}! How can I assist you today?`, timestamp }
                 ]);
-                setUserName(userMessage); // Store the user's name
-            } else if (!userBranchChoice && (userMessage.toLowerCase().includes('contact') || userMessage.toLowerCase().includes('branch'))) {
-                // Ask if the user needs to contact a branch
-                setChatHistory(prevHistory => [
+                setUserName(userMessage);
+                // Ask if the user has any queries or wants to contact a branch
+                setChatHistory((prevHistory) => [
                     ...prevHistory,
-                    { from: 'bot', text: 'Do you need to contact a branch? (Yes/No)' }
+                    { from: 'bot', text: 'Do you have any queries, or would you like to contact a particular branch?', timestamp }
                 ]);
-            } else if (!userBranchChoice && userMessage.toLowerCase() === 'yes') {
-                // Show branches if the user wants to contact a branch
-                setChatHistory(prevHistory => [
+            } else if (!userBranchChoice && (userInput.includes('contact') || userInput.includes('branch'))) {
+                setChatHistory((prevHistory) => [
                     ...prevHistory,
-                    { from: 'bot', text: 'Please choose a branch you would like to contact: \n1. Chennai\n2. Coimbatore\n3. Trichy' }
+                    { from: 'bot', text: 'Do you need to contact a branch? (Yes/No)', timestamp }
                 ]);
-            } else if (!userBranchChoice && userMessage.toLowerCase() === 'no') {
-                // If user says no to branch contact
-                setChatHistory(prevHistory => [
+            } else if (!userBranchChoice && userInput === 'yes') {
+                setChatHistory((prevHistory) => [
                     ...prevHistory,
-                    { from: 'bot', text: 'Okay, feel free to ask anything else!' }
+                    { from: 'bot', text: 'Please choose a branch you would like to contact:', timestamp }
                 ]);
-            } else if (userBranchChoice === null) {
-                // Default fallback if user message does not match any condition
-                setChatHistory(prevHistory => [
+            } else if (!userBranchChoice && userInput === 'no') {
+                setChatHistory((prevHistory) => [
                     ...prevHistory,
-                    { from: 'bot', text: 'I didn\'t quite get that. Could you rephrase?' }
+                    { from: 'bot', text: 'Okay, feel free to ask anything else!', timestamp }
+                ]);
+            } else if (!userBranchChoice) {
+                setChatHistory((prevHistory) => [
+                    ...prevHistory,
+                    { from: 'bot', text: "I didn't quite get that. Could you rephrase?", timestamp }
                 ]);
             }
+
         }
     };
 
     const handleBranchSelection = (branch) => {
+        const timestamp = new Date().toLocaleTimeString();
         setUserBranchChoice(branch);
-        const botResponse = `You have selected the ${branch} branch. Please contact us at the following number: 123-456-7890.`;
-        setChatHistory(prevHistory => [
+
+        const emailSent = sendBranchEmail(branch); // Simulate sending email
+        const botResponse = emailSent
+            ? `You have selected the ${branch} branch. A representative will contact you within 24 hours.`
+            : `Sorry, we couldn't process your request to contact the ${branch} branch at the moment. Please try again later.`;
+
+        setChatHistory((prevHistory) => [
             ...prevHistory,
-            { from: 'user', text: branch },
-            { from: 'bot', text: botResponse }
+            { from: 'user', text: branch, timestamp },
+            { from: 'bot', text: botResponse, timestamp }
         ]);
     };
 
-    // Scroll to the bottom of the chat container every time the chat history changes
+    const sendBranchEmail = (branch) => {
+        // Simulate sending an email alert
+        console.log(`Sending email alert to ${branch} branch.`);
+        return true;
+    };
+
     useEffect(() => {
         if (chatContainerRef.current) {
             chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
         }
-    }, [chatHistory]); 
+    }, [chatHistory]);
 
     return (
         <>
@@ -187,113 +203,162 @@ const Navbar = () => {
                     </div>
 
                     {/* Chatbot Modal */}
-            {showChatbot && (
-                <div
-                    style={{
-                        position: 'fixed',
-                        bottom: '20px',
-                        right: '20px',
-                        width: '300px',
-                        height: '400px',
-                        backgroundColor: 'white',
-                        border: '1px solid #ccc',
-                        borderRadius: '10px',
-                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        zIndex: 9999, // Ensure it's on top of other elements
-                    }}
-                >
-                    <div
-                        style={{
-                            padding: '10px',
-                            backgroundColor: '#007bff',
-                            color: 'white',
-                            textAlign: 'center',
-                            borderTopLeftRadius: '10px',
-                            borderTopRightRadius: '10px',
-                        }}
-                    >
-                        <strong>Chatbot</strong>
-                        <button
-                            onClick={toggleChatbot}
+                    {showChatbot && (
+                        <div
                             style={{
-                                backgroundColor: 'transparent',
-                                border: 'none',
-                                color: 'white',
-                                position: 'absolute',
-                                right: '10px',
-                                top: '5px',
-                                fontSize: '16px',
-                                cursor: 'pointer',
+                                position: 'fixed',
+                                bottom: '20px',
+                                right: '20px',
+                                width: '350px',
+                                height: '500px',
+                                background: 'linear-gradient(135deg, #007bff, #0056b3)',
+                                borderRadius: '15px',
+                                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                zIndex: 9999,
+                                color: '#fff',
                             }}
                         >
-                            ✖
-                        </button>
-                    </div>
-                    <div
-                        ref={chatContainerRef}
-                        style={{
-                            flex: 1,
-                            padding: '10px',
-                            overflowY: 'auto',
-                        }}
-                    >
-                        {/* Display Chat History */}
-                        {chatHistory.map((message, index) => (
-                            <div key={index} style={{ textAlign: message.from === 'user' ? 'right' : 'left' }}>
-                                <strong>{message.from === 'user' ? 'You: ' : 'Bot: '}</strong>
-                                <p>{message.text}</p>
+                            <div
+                                style={{
+                                    padding: '10px',
+                                    backgroundColor: '#003f7f',
+                                    color: 'white',
+                                    textAlign: 'center',
+                                    borderTopLeftRadius: '15px',
+                                    borderTopRightRadius: '15px',
+                                    fontWeight: 'bold',
+                                }}
+                            >
+                                Chatbot
+                                <button
+                                    onClick={toggleChatbot}
+                                    style={{
+                                        backgroundColor: 'transparent',
+                                        border: 'none',
+                                        color: 'white',
+                                        position: 'absolute',
+                                        right: '15px',
+                                        top: '10px',
+                                        fontSize: '16px',
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    ✖
+                                </button>
                             </div>
-                        ))}
 
-                        {/* Branch Selection */}
-                        {chatHistory.some(msg => msg.text.includes('choose a branch')) && !userBranchChoice && (
-                            <div>
-                                <button onClick={() => handleBranchSelection('Chennai')}>Chennai</button>
-                                <button onClick={() => handleBranchSelection('Coimbatore')}>Coimbatore</button>
-                                <button onClick={() => handleBranchSelection('Trichy')}>Trichy</button>
+                            <div
+                                ref={chatContainerRef}
+                                style={{
+                                    flex: 1,
+                                    padding: '10px',
+                                    overflowY: 'auto',
+                                    backgroundColor: '#f8f9fa',
+                                    borderRadius: '0 0 15px 15px',
+                                }}
+                            >
+                                {chatHistory.map((message, index) => (
+                                    <div
+                                        key={index}
+                                        style={{
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            alignItems: message.from === 'user' ? 'flex-end' : 'flex-start',
+                                            marginBottom: '10px',
+                                        }}
+                                    >
+                                        <div
+                                            style={{
+                                                maxWidth: '75%',
+                                                padding: '10px',
+                                                borderRadius: '15px',
+                                                backgroundColor: message.from === 'user' ? '#007bff' : '#f1f1f1',
+                                                color: message.from === 'user' ? 'white' : 'black',
+                                                textAlign: 'left',
+                                            }}
+                                        >
+                                            <p style={{ margin: 0 }}>{message.text}</p>
+                                        </div>
+                                        <small
+                                            style={{
+                                                marginTop: '5px',
+                                                fontSize: '10px',
+                                                color: '#666',
+                                                textAlign: message.from === 'user' ? 'right' : 'left',
+                                            }}
+                                        >
+                                            {message.timestamp}
+                                        </small>
+                                    </div>
+                                ))}
+
+                                {chatHistory.some((msg) => msg.text.includes('choose a branch')) && !userBranchChoice && (
+                                    <div style={{ textAlign: 'center', marginTop: '10px' }}>
+                                        {['Chennai', 'Coimbatore', 'Trichy'].map((branch) => (
+                                            <button
+                                                key={branch}
+                                                onClick={() => handleBranchSelection(branch)}
+                                                style={{
+                                                    margin: '5px',
+                                                    padding: '5px 15px',
+                                                    borderRadius: '20px',
+                                                    border: 'none',
+                                                    backgroundColor: '#007bff',
+                                                    color: 'white',
+                                                    cursor: 'pointer',
+                                                }}
+                                            >
+                                                {branch}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
-                        )}
-                    </div>
-                    <div
-                        style={{
-                            padding: '10px',
-                            borderTop: '1px solid #ccc',
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                        }}
-                    >
-                        <input
-                            type="text"
-                            value={userMessage}
-                            onChange={(e) => setUserMessage(e.target.value)}
-                            placeholder="Type your message..."
-                            style={{
-                                width: '80%',
-                                padding: '10px',
-                                border: '1px solid #ccc',
-                                borderRadius: '5px',
-                            }}
-                        />
-                        <button
-                            onClick={handleSendMessage}
-                            style={{
-                                backgroundColor: '#007bff',
-                                color: 'white',
-                                border: 'none',
-                                borderRadius: '5px',
-                                padding: '10px',
-                                cursor: 'pointer',
-                            }}
-                        >
-                            Send
-                        </button>
-                    </div>
-                </div>
-            )}
 
-                    
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    padding: '10px',
+                                    backgroundColor: '#f8f9fa',
+                                    borderTop: '1px solid #ddd',
+                                    borderBottomLeftRadius: '15px',
+                                    borderBottomRightRadius: '15px',
+                                }}
+                            >
+                                <input
+                                    type="text"
+                                    value={userMessage}
+                                    onChange={(e) => setUserMessage(e.target.value)}
+                                    placeholder="Type your message..."
+                                    style={{
+                                        flex: 1,
+                                        padding: '10px',
+                                        borderRadius: '20px',
+                                        border: '1px solid #ccc',
+                                        outline: 'none',
+                                        marginRight: '10px',
+                                    }}
+                                />
+                                <button
+                                    onClick={handleSendMessage}
+                                    style={{
+                                        padding: '10px 15px',
+                                        borderRadius: '20px',
+                                        border: 'none',
+                                        backgroundColor: '#007bff',
+                                        color: 'white',
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    ➤
+                                </button>
+                            </div>
+                        </div>
+                    )}
+
+
                 </div>
             </nav>
         </>
