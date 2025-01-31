@@ -257,28 +257,28 @@ const Home = () => {
 
         <div className='mt-5'>
           <div className='row'>
-            <div className='col-md-3'>
+            <div className='col-md-3 mb-4'>
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company1} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
                 <button className='btn-custom'>OPEN LINK</button>
               </div>
             </div>
 
-            <div className='col-md-3'>
+            <div className='col-md-3 mb-4'>
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company2} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
                 <button className='btn-custom'>OPEN LINK</button>
               </div>
             </div>
 
-            <div className='col-md-3'>
+            <div className='col-md-3 mb-4'>
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company4} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
                 <button className='btn-custom'>OPEN LINK</button>
               </div>
             </div>
 
-            <div className='col-md-3'>
+            <div className='col-md-3 mb-4'>
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company3} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
                 <button className='btn-custom'>OPEN LINK</button>
