@@ -113,7 +113,7 @@ const Weborder = () => {
             </div>
 
             {/* Info Section */}
-            <div className="col-12 col-lg-4 mt-4 mt-lg-0">
+            <div className="col-12 col-lg-4 mt-4 mt-lg-0 mb-4">
               <div className="info-box p-4 text-center rounded">
                 <img
                   src={weborder} // Replace with your image path
