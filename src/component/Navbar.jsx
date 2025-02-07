@@ -201,6 +201,7 @@ const Navbar = () => {
                             />
                         </a>
                     </div>
+                    
 
                     {/* Chatbot Modal */}
                     {showChatbot && (

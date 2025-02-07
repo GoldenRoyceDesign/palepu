@@ -1,5 +1,6 @@
 import React from 'react'
 import weborder from '../assets/weborder.png'
+import { Link } from 'react-router-dom';
 
 const Weborder = () => {
 
@@ -69,14 +70,14 @@ const Weborder = () => {
             <div className="col-12 col-lg-8 mt-4">
               {branches.map((branch, index) => (
                 <div key={index} className="branch-row py-3 border-bottom">
-                  <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
-                    <div className="mb-3 mb-md-0">
+                  <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center branch-order">
+                    <div className="mb-3 mb-md-0 branch-col1">
                       <h5 className="fw-bold">{branch.name}</h5>
                     </div>
-                    <div className="mb-3 mb-md-0">
+                    <div className="mb-3 mb-md-0 branch-col2">
                       <p className="mb-0">{branch.location}</p>
                     </div>
-                    <div className="d-flex gap-2">
+                    <div className="d-flex gap-2 branch-col3">
                       {branch.orderLinks.map((link, idx) => (
                         <a
                           key={idx}
@@ -101,11 +102,11 @@ const Weborder = () => {
 
               {/* Help Section */}
               <div className="mt-5">
-                <h6>
-                  <span className="text-primary fw-bold">Unsure</span> about making
+                <h6 className="text-primary fw-bold">
+                  Unsure about making
                   online orders?
                 </h6>
-                <p className="text-muted">
+                <p>
                   Contact our staff and we’ll help you place your first online order at
                   the nearest branch.
                 </p>
@@ -127,7 +128,8 @@ const Weborder = () => {
                 </div>
               </div>
               <div className='text-center'>
-                <button className="btn btn-primary">Contact Us</button>
+                <Link to='/contact'>
+                <button className="btn-custom">Contact Us</button></Link>
               </div>
 
             </div>

@@ -21,6 +21,7 @@ import company3 from '../assets/company3.png'
 import company4 from '../assets/company4.png'
 // import Testimonials from '../component/Testimonials'
 import Reviews from '../component/Reviews'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -32,15 +33,16 @@ const Home = () => {
       <section>
         <div className='home mt-4 mb-4 ms-5 me-5'>
           <div className='row'>
-            <div className='col-md-6 p-3 home-order-col d-flex justify-content-center align-items-center'>
+            <div className='col-md-6 p-3 home-order-col d-flex align-items-center'>
               <div className='d-flex justify-content-center align-items-center'>
                 <div>
                   <img src={order} alt='order-image' className='img-fluid' />
                 </div>
-                <div className='d-flex flex-column'>
-                  <h4>Order with Prescription</h4>
-                  <p>Upload prescription and we will deliver your medicines</p>
-                  <button className='btn-custom' style={{ width: 'fit-content' }}>ORDER NOW</button>
+                <div className='d-flex flex-column w-100'>
+                  <h4><strong>Order Online</strong></h4>
+                  <p>We deliver across Tamil Nadu.</p>
+                  <Link to='/weborder'>
+                  <button className='btn-custom' style={{ width: 'fit-content' }}>ORDER NOW</button></Link>
                 </div>
               </div>
             </div>
@@ -49,22 +51,22 @@ const Home = () => {
               <div className='d-flex flex-column'>
                 <ul>
                   <li><strong>Our Premises</strong></li>
-                  <p className='mt-2'>7500 sq.ft fully covered Air condition</p>
+                  <p className='mt-2'>7500 sq.ft across 7 locations</p>
                 </ul>
                 <ul>
-                  <li><strong>Stock Maintain Level</strong></li>
-                  <p className='mt-2'>More than 7 crores</p>
+                  <li><strong>Salesman</strong></li>
+                  <p className='mt-2'>More than 200</p>
                 </ul>
               </div>
 
               <div className='d-flex flex-column'>
                 <ul>
                   <li><strong>Staffs</strong></li>
-                  <p className='mt-2'>More than 100</p>
+                  <p className='mt-2'>More than 500+</p>
                 </ul>
                 <ul>
-                  <li><strong>Stocklist</strong></li>
-                  <p className='mt-2'>More than 250</p>
+                  <li><strong>Pharmacies</strong></li>
+                  <p className='mt-2'>More than 10,000+</p>
                 </ul>
               </div>
 
@@ -78,7 +80,7 @@ const Home = () => {
           <div className='row'>
             <div className='col-md-6 d-flex flex-column gap-3'>
               <h2>Palepu Pharma Distributors Private Limited
-                (formerly known as Palepu & Co.), </h2>
+                <span style={{fontSize: '16px'}}> (formerly known as Palepu & Co.),</span> </h2>
               <p>is one of the largest distributors in the state of Tamil Nadu. Dealing with more
                 than 22,000+ products, from 400+ Pharmaceutical Companies, both
                 Multinational and Indian, and serving 5000+ customers in both Retail and
@@ -222,10 +224,10 @@ const Home = () => {
       </section>
 
       <section className='container mt-5 ps-5 pe-5'>
-        <h1>Our track record speaks for itself. Many<br></br>
+        <h1><strong>Our track record speaks for itself. Many<br></br>
           individuals have chosen <span style={{ color: '#A09F9F' }}>our medical center<br></br>
             and have positive, trans formative<br></br>
-            experiences.</span></h1>
+            experiences.</span></strong></h1>
 
 
         <div className='row mt-5'>
@@ -269,7 +271,7 @@ const Home = () => {
                 <img src={company2} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
                 <button className='btn-custom'>OPEN LINK</button>
               </div>
-            </div>
+            </div>  
 
             <div className='col-md-3 mb-4'>
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>

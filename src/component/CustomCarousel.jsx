@@ -16,22 +16,22 @@ const CustomCarousel = () => {
             <button className="btn btn-custom">Find Us &gt;</button>
           </div>
         </div>
-        <div className="carousel-item bg-image2">
+        {/* <div className="carousel-item bg-image2">
           <div className="carousel-caption">
             <h1>Another Slide Title</h1>
             <p>Additional description for the second slide.</p>
             <button className="btn btn-custom">Learn More &gt;</button>
           </div>
-        </div>
+        </div> */}
       </div>
-      <button className="carousel-control-prev custom-arrow" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+      {/* <button className="carousel-control-prev custom-arrow" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Previous</span>
       </button>
       <button className="carousel-control-next custom-arrow" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
-      </button>
+      </button> */}
     </div>
   );
 };

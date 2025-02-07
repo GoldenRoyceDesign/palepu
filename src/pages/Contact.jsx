@@ -6,6 +6,8 @@ import contactvec from '../assets/contact-vector.png'
 
 const Contact = () => {
 
+  const colors = ["#e4eef7", "#cfe7ff", "#e8ebf2", "#e4eef7"]; 
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -57,7 +59,7 @@ const Contact = () => {
         <div className='row d-flex justify-content-between'>
           <div className='col-md-7 mb-4'>
             <div className='d-flex align-items-center gap-3'>
-              <h1>We Are Here To Help You!</h1>
+              <h1><strong>We Are Here To Help You!</strong></h1>
               <img src={contact} alt='contact-image' className='img-fluid' />
             </div>
 
@@ -92,11 +94,11 @@ const Contact = () => {
                 },
               ].map((item, index) => (
                 <div className="col-md-6 mb-4" key={index}>
-                  <div className="card p-3">
-                    <h5>{item.title}</h5>
+                  <div className="card p-4" style={{ backgroundColor: colors[index] }}>
+                    <h5><strong>{item.title}</strong></h5>
                     <p>{item.content}</p>
                     {item.button && (
-                      <a href="/" className="btn btn-primary">
+                      <a href="/weborder" className="btn-custom">
                         {item.button}
                       </a>
                     )}
@@ -107,12 +109,12 @@ const Contact = () => {
 
             {/* Extra Section */}
             <div className="mt-4 mb-4">
-              <h5>Interested in working with Palepu Pharma?</h5>
+              <h5><strong>Interested in working with Palepu Pharma?</strong></h5>
               <p>
                 Please send us a mail of your CV and small brief about yourself to{" "}
                 <a href="mailto:hr@palepugroup.com">hr@palepugroup.com</a>
               </p>
-              <a href="/" className="btn btn-primary">
+              <a href="/" className="btn-custom">
                 Click for Web Orders
               </a>
             </div>
@@ -151,8 +153,8 @@ const Contact = () => {
           </div>
 
           {/* Right Section */}
-          <div className="col-md-4 d-flex flex-column justify-content-center contact-form">
-            <h3 className="mb-3">Fill out the tabs below:</h3>
+          <div className="col-md-4 d-flex flex-column  contact-form">
+            <h3 className="mb-3"><strong>Fill out the tabs below:</strong></h3>
             <form className="p-5" onSubmit={handleSubmit}>
               {[
                 { label: "Name", type: "text", name: "name" },
@@ -162,7 +164,7 @@ const Contact = () => {
                 { label: "Company / Pharmacy Address", type: "text", name: "companyAddress" },
                 { label: "License", type: "text", name: "license" },
               ].map((field, index) => (
-                <div className="mb-3" key={index}>
+                <div className="mb-4" key={index}>
                   <label className="form-label">{field.label}</label>
                   <input
                     type={field.type}
@@ -175,7 +177,7 @@ const Contact = () => {
                 </div>
               ))}
               <div className="text-center">
-                <button type="submit" className="btn btn-warning pe-4 ps-4 rounded-5 text-white">
+                <button type="submit" className="btn-custom pe-5 ps-5 rounded-5">
                   SUBMIT
                 </button>
               </div>

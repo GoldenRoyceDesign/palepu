@@ -1,3 +1,10 @@
+@media screen and (max-width: 767px) {
+    .branch-order .branch-col1, .branch-col2, .branch-col3 {
+        width: 100%;
+      }
+      
+}
+
 @media screen and (max-width: 500px){
     .carousel-caption{
         top: 40% !important;

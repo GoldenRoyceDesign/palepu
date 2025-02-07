@@ -69,8 +69,8 @@ const Location = () => {
           <div className="row mb-5 d-flex justify-content-center align-items-center" key={index}>
             <div className="col-lg-3 col-md-6 mb-4">
               <div className="card p-4 border-0 rounded">
-                <h3 className="text-dark font-weight-bold mb-3">{office.type}</h3>
-                <h5 className="text-info font-weight-bold">{office.branchName}</h5>
+                <h3 className="text-dark font-weight-bold mb-3"><strong>{office.type}</strong></h3>
+                <h5 className="text-info font-weight-bold"><strong>{office.branchName}</strong></h5>
                 <p className="text-muted">{office.address}</p>
                 <p style={{ marginTop: '-15px', fontWeight: '500' }}>{office.contactNumber}</p>
               </div>
@@ -95,8 +95,8 @@ const Location = () => {
           <div className="row mb-5 d-flex justify-content-center align-items-center" key={index}>
             <div className="col-lg-3 col-md-6 mb-4">
               <div className="card p-4 border-0 rounded">
-                <h3 className="text-dark font-weight-bold mb-3">{branch.type}</h3>
-                <h5 className="text-info font-weight-bold">{branch.branchName}</h5>
+                <h3 className="text-dark font-weight-bold mb-3"><strong>{branch.type}</strong></h3>
+                <h5 className="text-info font-weight-bold"><strong>{branch.branchName}</strong></h5>
                 <p className="text-muted">{branch.address}</p>
                 <p style={{ marginTop: '-15px', fontWeight: '500' }}>{branch.contactNumber}</p>
                 <p style={{ marginTop: '-15px', fontWeight: '500' }}>{branch.contactPerson}</p>
