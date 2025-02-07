@@ -84,6 +84,7 @@ const Location = () => {
                   style={{ borderRadius: "10px" }}
                   allowFullScreen=""
                   loading="lazy"
+                  title='map'
                 ></iframe>
               </div>
             </div>
@@ -112,6 +113,7 @@ const Location = () => {
                   style={{ borderRadius: "10px" }}
                   allowFullScreen=""
                   loading="lazy"
+                  title='map'
                 ></iframe>
               </div>
             </div>
