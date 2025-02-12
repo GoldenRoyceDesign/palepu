@@ -9,8 +9,8 @@ const Weborder = () => {
       name: "Mylapore Branch",
       location: "Chennai, Tamil Nadu",
       orderLinks: [
-        { name: "Order Link 1", url: "https://example.com/mylapore-order1", color: "#dbe0fe", borderColor: "#0123FF"   },
-        { name: "Order Link 2", url: "https://example.com/mylapore-order2", color: "#e6d1f0", borderColor: "#8F26B8"   },
+        { name: "Order Link 1", url: "https://example.com/mylapore-order1", color: "#dbe0fe", borderColor: "#0123FF" },
+        { name: "Order Link 2", url: "https://example.com/mylapore-order2", color: "#e6d1f0", borderColor: "#8F26B8" },
       ],
     },
     {
@@ -102,7 +102,7 @@ const Weborder = () => {
 
               {/* Help Section */}
               <div className="mt-5">
-                <h6 className="text-primary fw-bold">
+                <h6 className="fw-bold">
                   Unsure about making
                   online orders?
                 </h6>
@@ -121,16 +121,15 @@ const Weborder = () => {
                   alt="Online Pharmacy"
                   className="img-fluid mb-3"
                 />
-                <div style={{ background: '#98CDFC' }} className='p-4'>
+                <div className='text-center p-4' style={{ background: '#317CBF' }}>
                   <h5 className="fw-bold">"Your Trusted Online Pharmacy"</h5>
                   <hr></hr>
                   <h6 className="text-white">Quick, Easy, Reliable!</h6>
+                  <Link to='/contact'>
+                    <button className="btn-custom mt-4">Contact Us</button></Link>
                 </div>
               </div>
-              <div className='text-center'>
-                <Link to='/contact'>
-                <button className="btn-custom">Contact Us</button></Link>
-              </div>
+
 
             </div>
           </div>
@@ -138,7 +137,7 @@ const Weborder = () => {
 
 
         </div>
-        
+
 
       </section>
     </>

@@ -3,6 +3,17 @@
         width: 100%;
       }
       
+      .carousel-caption h1{
+        font-size: 2.5rem !important;
+    }
+
+    .stats-container .row .sec-text{
+        text-align: center !important;
+    }
+
+    .testimonials-container .testimonial-card{
+        flex-direction: column !important;
+    }
 }
 
 @media screen and (max-width: 500px){

@@ -1,27 +1,14 @@
 import React from 'react'
 import CustomCarousel from '../component/CustomCarousel'
-import order from '../assets/order.png'
 import about from '../assets/about.png'
 import missionvision from '../assets/mission&vision.png'
-// import product from '../assets/product.png'
-// import company from '../assets/company.png'
-// import customer from '../assets/customer.png'
-// import staffs from '../assets/staffs.png'
-// import branches from '../assets/branches.png'
-// import CountUp from "react-countup";
-// import { InView } from "react-intersection-observer";
-import center1 from '../assets/center1.png'
-// import center2 from '../assets/center2.png'
-import center3 from '../assets/center3.png'
-// import center4 from '../assets/center4.png'
-import center5 from '../assets/center5.png'
 import company1 from '../assets/company1.png'
 import company2 from '../assets/company2.png'
 import company3 from '../assets/company3.png'
 import company4 from '../assets/company4.png'
-// import Testimonials from '../component/Testimonials'
-import Reviews from '../component/Reviews'
-import { Link } from 'react-router-dom'
+import WhatsAppButton from '../component/WhatsAppButton'
+import centerlogo from '../assets/center-logo.png'
+import Testimonials from '../component/Testimonials'
 
 const Home = () => {
   return (
@@ -31,56 +18,11 @@ const Home = () => {
       </section>
 
       <section>
-        <div className='home mt-4 mb-4 ms-5 me-5'>
-          <div className='row'>
-            <div className='col-md-6 p-3 home-order-col d-flex align-items-center'>
-              <div className='d-flex justify-content-center align-items-center'>
-                <div>
-                  <img src={order} alt='order-image' className='img-fluid' />
-                </div>
-                <div className='d-flex flex-column w-100'>
-                  <h4><strong>Order Online</strong></h4>
-                  <p>We deliver across Tamil Nadu.</p>
-                  <Link to='/weborder'>
-                  <button className='btn-custom' style={{ width: 'fit-content' }}>ORDER NOW</button></Link>
-                </div>
-              </div>
-            </div>
-
-            <div className='col-md-6 d-flex justify-content-around align-items-center border p-3 home-order-col2'>
-              <div className='d-flex flex-column'>
-                <ul>
-                  <li><strong>Our Premises</strong></li>
-                  <p className='mt-2'>7500 sq.ft across 7 locations</p>
-                </ul>
-                <ul>
-                  <li><strong>Salesman</strong></li>
-                  <p className='mt-2'>More than 200</p>
-                </ul>
-              </div>
-
-              <div className='d-flex flex-column'>
-                <ul>
-                  <li><strong>Staffs</strong></li>
-                  <p className='mt-2'>More than 500+</p>
-                </ul>
-                <ul>
-                  <li><strong>Pharmacies</strong></li>
-                  <p className='mt-2'>More than 10,000+</p>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
         <div className='container about mt-5'>
           <div className='row'>
             <div className='col-md-6 d-flex flex-column gap-3'>
-              <h2>Palepu Pharma Distributors Private Limited
-                <span style={{fontSize: '16px'}}> (formerly known as Palepu & Co.),</span> </h2>
+              <h2><strong>Palepu Pharma Distributors Private Limited</strong>
+                <span style={{ fontSize: '16px' }}> (formerly known as Palepu & Co.),</span> </h2>
               <p>is one of the largest distributors in the state of Tamil Nadu. Dealing with more
                 than 22,000+ products, from 400+ Pharmaceutical Companies, both
                 Multinational and Indian, and serving 5000+ customers in both Retail and
@@ -101,6 +43,45 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+
+      <section className='home-counter'>
+        <div className="stats-container">
+          <div className="content">
+            <div className="row align-items-center">
+              {/* Left Side */}
+              <div className="col-md-5 text-white text-start d-flex flex-column gap-5 sec-text">
+                <div>
+                  <h4>7 Locations</h4>
+                  <p>Quis id sapiente voluptatem quo sint reprehenderit eos illo sequi.</p>
+                </div>
+                <div>
+                  <h4>200+ Salesmen</h4>
+                  <p>Quis id sapiente voluptatem quo sint reprehenderit eos illo sequi.</p>
+                </div>
+              </div>
+
+              {/* Center Logo */}
+              <div className="col-md-2 text-center">
+                <img src={centerlogo} alt="Company Logo" className="center-logo" />
+              </div>
+
+              {/* Right Side */}
+              <div className="col-md-5 text-white text-end d-flex flex-column gap-5 sec-text">
+                <div>
+                  <h4>500+ Staffs</h4>
+                  <p>Quis id sapiente voluptatem quo sint reprehenderit eos illo sequi.</p>
+                </div>
+                <div>
+                  <h4>10,000+ Pharmacies</h4>
+                  <p>Quis id sapiente voluptatem quo sint reprehenderit eos illo sequi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       <section>
         <div className='container mt-5 mission'>
@@ -127,172 +108,65 @@ const Home = () => {
               </div> */}
             </div>
             <div className='col-md-6 d-flex justify-content-center align-items-center'>
-              <img src={missionvision} alt='missionvision-image' className='img-fluid w-50' />
+              <img src={missionvision} alt='missionvision-image' className='img-fluid w-75' />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="text-center statics pt-5 pb-5">
-        <div className="container">
-          <p>Statistics</p>
-          <h2 style={{ fontWeight: "bold" }}>Service in the Cause of Medicine and Humanity.</h2>
 
-          <div className="row d-flex justify-content-center align-items-center mt-5">
-            {/* Product Count */}
-            {/* <div className="col-md-2">
-              <img src={product} alt="product" className="img-fluid" />
-              <h3 className="mt-5">
-                <InView triggerOnce={false}>
-                  {({ inView, ref }) => (
-                    <span ref={ref}>
-                      {inView ? <CountUp end={22000} duration={2} separator="," suffix="+" /> : "0"}
-                    </span>
-                  )}
-                </InView>
-              </h3>
-              <p>Products Available</p>
-            </div>
-
-            
-            <div className="col-md-2">
-              <img src={company} alt="company" className="img-fluid" />
-              <h3 className="mt-5">
-                <InView triggerOnce={false}>
-                  {({ inView, ref }) => (
-                    <span ref={ref}>
-                      {inView ? <CountUp end={300} duration={2} separator="," suffix="+" /> : "0"}
-                    </span>
-                  )}
-                </InView>
-              </h3>
-              <p>Companies</p>
-            </div>
-
-            
-            <div className="col-md-2">
-              <img src={customer} alt="customer" className="img-fluid" />
-              <h3 className="mt-5">
-                <InView triggerOnce={false}>
-                  {({ inView, ref }) => (
-                    <span ref={ref}>
-                      {inView ? <CountUp end={100} duration={2} separator="," suffix="+" /> : "0"}
-                    </span>
-                  )}
-                </InView>
-              </h3>
-              <p>Customers</p>
-            </div>
-
-            
-            <div className="col-md-2">
-              <img src={staffs} alt="staffs" className="img-fluid" />
-              <h3 className="mt-5">
-                <InView triggerOnce={false}>
-                  {({ inView, ref }) => (
-                    <span ref={ref}>
-                      {inView ? <CountUp end={800} duration={2} separator="," suffix="+" /> : "0"}
-                    </span>
-                  )}
-                </InView>
-              </h3>
-              <p>Staffs</p>
-            </div>
-
-            
-            <div className="col-md-2">
-              <img src={branches} alt="branches" className="img-fluid" />
-              <h3 className="mt-5">
-                <InView triggerOnce={false}>
-                  {({ inView, ref }) => (
-                    <span ref={ref}>
-                      {inView ? <CountUp end={6} duration={2} separator="," suffix="+" /> : "0"}
-                    </span>
-                  )}
-                </InView>
-              </h3>
-              <p>Branches</p>
-            </div> */}
-
-            <p>The relevant section of Cicero as printed in the source is reproduced below with fragments used in Lorem ipsum highlighted. Letters in brackets were added to Lorem ipsum and
-              were not present in the source text: The relevant section of Cicero as printed in the source is reproduced below with fragments used in Lorem ipsum highlighted. Letters in brackets were
-              were not present in the source text: The relevant section of Cicero as printed in the source is reproduced below with fragments used in Lorem ipsum highlighted. Letters in brackets were added
-              added to Lorem ipsum and</p>
-
-          </div>
-        </div>
-      </section>
-
-      <section className='container mt-5 ps-5 pe-5'>
-        <h1><strong>Our track record speaks for itself. Many<br></br>
-          individuals have chosen <span style={{ color: '#A09F9F' }}>our medical center<br></br>
-            and have positive, trans formative<br></br>
-            experiences.</span></strong></h1>
-
-
-        <div className='row mt-5'>
-          <div className='col-md-6'>
-            <div className='d-flex flex-column gap-5 mb-3'>
-              <img src={center1} alt='medical-center-image' className='img-fluid' />
-              <div className='mb-3'>
-                <Reviews />
-              </div>
-            </div>
-          </div>
-          <div className='col-md-6'>
-            <img src={center3} alt='medical-center-image' className='img-fluid mb-3' />
-            <div className='mb-3'>
-              <Reviews />
-            </div>
-            <img src={center5} alt='medical-center-image' className='img-fluid mb-3' />
-          </div>
-        </div>
-      </section>
-
-      {/* <section className='mt-5 mb-5'>
-        <h2 className='text-center mb-5'><strong>Our Trusted Clients</strong></h2>
+      <section>
         <Testimonials />
-      </section> */}
+      </section>
+
+      
+
+      
 
       <section className='container mt-5 mb-5'>
-        <h1 className='text-center' style={{ color: '#327DC0' }}><strong>Palepu Group Companies*</strong></h1>
+        <h1 className='text-center'><strong>Palepu Group Companies*</strong></h1>
 
         <div className='mt-5'>
+
+        <div className='text-center mb-5'>
+            <p>Among Top 3 procurers for the largest 20 companies</p>
+          </div>
+
           <div className='row'>
             <div className='col-md-3 mb-4'>
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company1} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
-                <button className='btn-custom'>OPEN LINK</button>
+                <button className='company-btn ps-4 pe-4'>OPEN LINK</button>
               </div>
             </div>
 
             <div className='col-md-3 mb-4'>
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company2} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
-                <button className='btn-custom'>OPEN LINK</button>
+                <button className='company-btn ps-4 pe-4'>OPEN LINK</button>
               </div>
-            </div>  
+            </div>
 
             <div className='col-md-3 mb-4'>
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company4} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
-                <button className='btn-custom'>OPEN LINK</button>
+                <button className='company-btn ps-4 pe-4'>OPEN LINK</button>
               </div>
             </div>
 
             <div className='col-md-3 mb-4'>
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company3} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
-                <button className='btn-custom'>OPEN LINK</button>
+                <button className='company-btn ps-4 pe-4'>OPEN LINK</button>
               </div>
             </div>
           </div>
 
-          <div className='text-center mt-4'>
-            <p>Among Top 3 procurers for the largest 20 companies</p>
-          </div>
-
         </div>
+      </section>
+
+      <section>
+        <WhatsAppButton />
       </section>
     </>
 

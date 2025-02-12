@@ -6,7 +6,7 @@ import contactvec from '../assets/contact-vector.png'
 
 const Contact = () => {
 
-  const colors = ["#e4eef7", "#cfe7ff", "#e8ebf2", "#e4eef7"]; 
+  const colors = ["#e4eef7", "#cfe7ff", "#e8ebf2", "#e4eef7"];
 
   const [formData, setFormData] = useState({
     name: '',
@@ -63,7 +63,6 @@ const Contact = () => {
               <img src={contact} alt='contact-image' className='img-fluid' />
             </div>
 
-            <p>Quick Links</p>
 
             <div className="row">
               {/* Quick Link Cards */}
