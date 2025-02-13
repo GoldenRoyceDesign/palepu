@@ -142,7 +142,7 @@
 .stats-container {
   background: url("./assets/home-counter.png") center/cover no-repeat;
   width: 100%;
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -370,9 +370,6 @@
   width: 30%;
 }
 
-.info-box{
-
-}
 
 
 /* Management page style */
@@ -509,6 +506,7 @@
   border-radius: 2px;
   object-fit: cover;
 }
+
 .branch-card p{
   font-size: 14px;
 }
