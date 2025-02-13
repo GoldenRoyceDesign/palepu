@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CustomCarousel from '../component/CustomCarousel'
 import about from '../assets/about.png'
 import missionvision from '../assets/mission&vision.png'
@@ -9,8 +9,15 @@ import company4 from '../assets/company4.png'
 import WhatsAppButton from '../component/WhatsAppButton'
 import centerlogo from '../assets/center-logo.png'
 import Testimonials from '../component/Testimonials'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  }, []);
+
   return (
     <>
       <section>
@@ -20,7 +27,7 @@ const Home = () => {
       <section>
         <div className='container about mt-5'>
           <div className='row'>
-            <div className='col-md-6 d-flex flex-column gap-3'>
+            <div className='col-md-6 d-flex flex-column gap-3'  data-aos="fade-right">
               <h2><strong>Palepu Pharma Distributors Private Limited</strong>
                 <span style={{ fontSize: '16px' }}> (formerly known as Palepu & Co.),</span> </h2>
               <p>is one of the largest distributors in the state of Tamil Nadu. Dealing with more
@@ -37,8 +44,8 @@ const Home = () => {
                 the company one of the largest distributors in the state of Tamil Nadu.</p>
               <p><strong>From Day 1 of our business in 1960 till date, with six decades passed, we still follow the same mantra:</strong></p>
             </div>
-            <div className='col-md-6 d-flex justify-content-center align-items-center'>
-              <img src={about} alt='about-image' className='img-fluid' />
+            <div className='col-md-6 d-flex justify-content-center align-items-center'  data-aos="fade-up">
+              <img src={about} alt='about-image' className='img-fluid w-75' />
             </div>
           </div>
         </div>
