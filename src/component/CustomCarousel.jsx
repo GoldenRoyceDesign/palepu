@@ -1,19 +1,25 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 const CustomCarousel = () => {
+
+  useEffect(() => {
+        AOS.init({ duration: 1000, once: false });
+      }, []);
+
   return (
     <div id="customCarousel" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">
         <div className="carousel-item active bg-image1">
           <div className="carousel-caption">
-            <h1>Continuing 60 Years of Delivering Health</h1>
-            <p>
+            <h1 data-aos="fade-up">Continuing 60 Years of Delivering Health</h1>
+            <p data-aos="fade-up">
               Cardiology, Neurology, Nephrology, Diabetology, Pediatrics,<br />
               Anti-Infectives, Nutraceuticals, and many more pharmaceutical products.
             </p>
-            <button className="btn btn-custom">Find Us &gt;</button>
+            <button className="btn btn-custom" data-aos="fade-up">Find Us &gt;</button>
           </div>
         </div>
         {/* <div className="carousel-item bg-image2">

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaQuoteLeft, FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion"; // Import animation library
+import { motion, AnimatePresence } from "framer-motion"; 
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const testimonials = [
   {
@@ -50,10 +52,14 @@ const Testimonials = () => {
     }
   };
 
+  useEffect(() => {
+      AOS.init({ duration: 1000, once: false });
+    }, []);
+
   return (
     <div className="testimonials-container">
       
-      <h2 className="text-white mb-4"><strong>Our Trusted Clients</strong></h2>
+      <h2 className="text-white mb-4" data-aos="fade-right"><strong>Our Trusted Clients</strong></h2>
       <div className="testimonial-navigation-icons">
         <FaArrowLeft className="testimonial-nav-icon" onClick={handlePrev} />
         <FaArrowRight className="testimonial-nav-icon" onClick={handleNext} />
@@ -69,7 +75,7 @@ const Testimonials = () => {
               exit={{ opacity: 0, x: -50 }} // Exit to left
               transition={{ duration: 0.5 }} // Smooth transition
             >
-              <div className="testimonial-card d-flex align-items-center">
+              <div className="testimonial-card d-flex align-items-center" data-aos="zoom-in-right">
                 <img src={testimonial.image} alt={testimonial.name} className="testimonial-img img-fluid" />
                 <div className="testimonial-content">
                   <FaQuoteLeft className="quote-icon" />

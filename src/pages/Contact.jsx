@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import contact from '../assets/contact.png'
 import logo from '../assets/logo.png'
 import location from '../assets/location-vector.png'
 import contactvec from '../assets/contact-vector.png'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Contact = () => {
+
+  useEffect(() => {
+      AOS.init({ duration: 1000, once: false });
+    }, []);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -48,10 +54,10 @@ const Contact = () => {
     <>
       <div className='contact'>
         <div className='row d-flex justify-content-center align-items-center pt-5 pb-4'>
-          <div className='col-md-6'>
+          <div className='col-md-6' data-aos="zoom-in-up">
             <img src={contact} alt='contact-image' className='img-fluid' />
           </div>
-          <div className='col-md-6 p-4'>
+          <div className='col-md-6 p-4' data-aos="fade-up">
             <h1><strong>Don’t Let Your Health
               Take a Backseat!</strong></h1>
             <p>Reference site about Lorem Ipsum, giving information on its origins, as well
@@ -62,11 +68,11 @@ const Contact = () => {
 
         <section style={{ background: '#EFFAFE' }}>
           <div className="container pt-5 pb-5">
-            <h4 className='fw-bold'>Service in the Cause of Medicine
+            <h4 className='fw-bold' data-aos="fade-right">Service in the Cause of Medicine
               and Humanity.</h4>
           </div>
 
-          <div className="contact-form p-5">
+          <div className="contact-form p-5" data-aos="fade-up">
             <form onSubmit={handleSubmit}>
               <div className="row mb-3">
                 {[
@@ -139,7 +145,7 @@ const Contact = () => {
         <section style={{ background: '#EFFAFE' }}>
           <div className='container pt-5 pb-5'>
             {/* Extra Section */}
-            <div className="mt-4 mb-4">
+            <div className="mt-4 mb-4" data-aos="fade-right">
               <h5><strong>Interested in working with Palepu Pharma?</strong></h5>
               <p>
                 Please send us a mail of your CV and small brief about yourself to{" "}
@@ -150,7 +156,7 @@ const Contact = () => {
               </a>
             </div>
 
-            <div className='w-100 mt-5'>
+            <div className='w-100 mt-5' data-aos="fade-right">
               <img
                 src={logo}
                 alt="PPD Logo"
@@ -159,7 +165,7 @@ const Contact = () => {
             </div>
 
             {/* Footer Info */}
-            <div className="footer-info mt-4 p-4">
+            <div className="footer-info mt-4 p-4" data-aos="zoom">
               <div className='row'>
                 <div className='col-md-4 d-flex flex-column align-items-center pt-4'>
                   <p>

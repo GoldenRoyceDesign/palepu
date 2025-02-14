@@ -8,6 +8,7 @@ import Management from './pages/Management';
 import Weborder from './pages/Weborder';
 import Location from './pages/Location';
 import Contact from './pages/Contact';
+import Footer from './component/Footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/location' element={<Location />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

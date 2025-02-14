@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import weborder from '../assets/weborder.png'
 import { Link } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Weborder = () => {
+
+  useEffect(() => {
+        AOS.init({ duration: 1000, once: false });
+      }, []);
 
   const branches = [
     {
@@ -63,13 +69,13 @@ const Weborder = () => {
         </div>
 
         <div className='container mt-5'>
-          <p>Cardiology, Neurology, Nephrology, Diabetology, Pediatrics, Anti-Infectives, Nutraceuticals
+          <p data-aos="fade-right">Cardiology, Neurology, Nephrology, Diabetology, Pediatrics, Anti-Infectives, Nutraceuticals
             and many more pharmaceutical products available with us</p>
 
           <div className="row">
             <div className="col-12 col-lg-8 mt-4">
               {branches.map((branch, index) => (
-                <div key={index} className="branch-row py-3 border-bottom">
+                <div key={index} className="branch-row py-3 border-bottom" data-aos="zoom-in-right">
                   <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center branch-order">
                     <div className="mb-3 mb-md-0 branch-col1">
                       <h5 className="fw-bold">{branch.name}</h5>
@@ -101,7 +107,7 @@ const Weborder = () => {
               ))}
 
               {/* Help Section */}
-              <div className="mt-5">
+              <div className="mt-5 mb-5" data-aos="fade-right">
                 <h6 className="fw-bold">
                   Unsure about making
                   online orders?
@@ -114,7 +120,7 @@ const Weborder = () => {
             </div>
 
             {/* Info Section */}
-            <div className="col-12 col-lg-4 mt-4 mt-lg-0 mb-4">
+            <div className="col-12 col-lg-4 mt-lg-0 mb-4" data-aos="fade-up">
               <div className="info-box p-4 text-center rounded">
                 <img
                   src={weborder} // Replace with your image path
@@ -129,16 +135,10 @@ const Weborder = () => {
                     <button className="btn-custom mt-4">Contact Us</button></Link>
                 </div>
               </div>
-
-
             </div>
+            
           </div>
-
-
-
         </div>
-
-
       </section>
     </>
   )

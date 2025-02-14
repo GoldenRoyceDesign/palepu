@@ -14,6 +14,11 @@
     .testimonials-container .testimonial-card{
         flex-direction: column !important;
     }
+
+    .footer .col-md-4{
+        align-items: start !important;
+        text-align: left !important;
+    }
 }
 
 @media screen and (max-width: 500px){
