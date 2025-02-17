@@ -24,8 +24,8 @@ const Home = () => {
         <CustomCarousel />
       </section>
 
-      <section>
-        <div className='container about mt-5'>
+      <section style={{background: '#dfe9f3'}}>
+        <div className='container about pt-5'>
           <div className='row'>
             <div className='col-md-6 d-flex flex-column gap-3'>
               <h2 data-aos="fade-right"><strong>Palepu Pharma Distributors Private Limited</strong>
@@ -96,13 +96,13 @@ const Home = () => {
             <div className='col-md-6 mb-4'>
               <h2 data-aos="fade-right">We are Palepu Pharma</h2>
               <div className='border rounded-2 p-3 mt-4 mb-4' data-aos="zoom-in-right">
-                <h5>MISSION</h5>
+                <h5 className='fw-bold'>MISSION</h5>
                 <p>We source directly from manufacturers, selling only to
                   licensed pharmacies or hospitals, ensuring transparency
                   and efficient supply chain operations.</p>
               </div>
               <div className='border rounded-2 p-3 mb-4' data-aos="zoom-in-right">
-                <h5>VISION</h5>
+                <h5 className='fw-bold'>VISION</h5>
                 <p>We source directly from manufacturers, selling only to
                   licensed pharmacies or hospitals, ensuring transparency
                   and efficient supply chain operations.</p>
@@ -140,7 +140,7 @@ const Home = () => {
           </div>
 
           <div className='row'>
-            <div className='col-md-3 mb-4' data-aos="fade-up">
+            <div className='col-md-3 mb-4 p-4' data-aos="fade-up" id='partner'>
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company1} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
                 <a href='https://shanbalajipharma.com/' target='_blank' rel="noreferrer">
@@ -148,7 +148,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className='col-md-3 mb-4' data-aos="fade-down">
+            <div className='col-md-3 mb-4 p-4' data-aos="fade-down" id='partner'>
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company2} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
                 <a href='https://www.lphpharma.com/' target='_blank' rel="noreferrer">
@@ -156,7 +156,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className='col-md-3 mb-4' data-aos="fade-up">
+            <div className='col-md-3 mb-4 p-4' data-aos="fade-up" id='partner'>
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company4} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
                 <a href='https://ammanpharma.in/' target='_blank' rel="noreferrer">
@@ -164,7 +164,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className='col-md-3 mb-4' data-aos="fade-down">
+            <div className='col-md-3 mb-4 p-4' data-aos="fade-down" id='partner'>
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company3} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
                 <a href='https://www.medihauxe.com/' target='_blank' rel="noreferrer">

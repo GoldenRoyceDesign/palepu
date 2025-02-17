@@ -308,6 +308,12 @@
   color: #333;
 } */
 
+#partner:hover{
+  background: rgb(223, 233, 243, 0.5);
+  border: 1px solid #5a98ce;
+  border-radius: 8px;
+}
+
 .company-btn{
   border: 2px solid #074881;
   color: #074881;

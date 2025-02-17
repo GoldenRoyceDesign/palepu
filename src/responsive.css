@@ -7,6 +7,7 @@
         font-size: 2.5rem !important;
     }
 
+
     .stats-container .row .sec-text{
         text-align: center !important;
     }
@@ -30,6 +31,10 @@
 
     .carousel-caption h1{
         font-size: 2rem !important;
+    }
+
+    .carousel-caption p{
+        font-size: 1rem !important;
     }
 
     .custom-arrow{
