@@ -24,7 +24,7 @@ const Home = () => {
         <CustomCarousel />
       </section>
 
-      <section style={{background: '#dfe9f3'}}>
+      <section style={{background: '#dfe9f3'}} id='home'>
         <div className='container about pt-5'>
           <div className='row'>
             <div className='col-md-6 d-flex flex-column gap-3'>

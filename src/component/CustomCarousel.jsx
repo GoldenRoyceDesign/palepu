@@ -20,7 +20,7 @@ const CustomCarousel = () => {
               Cardiology, Neurology, Nephrology, Diabetology, Pediatrics,<br />
               Anti-Infectives, Nutraceuticals, and many more pharmaceutical products.
             </p>
-            <button className="btn btn-custom">Find Us &gt;</button>
+            <button className="btn btn-custom"><a href='#home' style={{textDecoration: 'none', color: 'white'}}> Find Us &gt;</a></button>
             </div>
           </div>
         </div>
