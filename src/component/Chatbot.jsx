@@ -6,12 +6,12 @@ const Chatbot = () => {
   const [showChat, setShowChat] = useState(false);
 
   const branches = {
-    Mylapore: { phone: "044-4867 5533", email: "mylapore@yourwebsite.com" },
+    Mylapore: { phone: "044-4867 5533", email: "sales@palepugroup.com" },
     Corporate_Office: { phone: "044-24672711/12/13/14", email: "corporate@yourwebsite.com" },
-    Mogappair: { phone: "044-26560599", email: "mogappair@yourwebsite.com" },
-    Tambaram: { phone: "044-2241 1141", email: "tambaram@yourwebsite.com" },
-    Madurai: { phone: "0452-258 6550, 4393462", email: "madurai@yourwebsite.com" },
-    Coimbatore: { phone: "0422-4033100", email: "coimbatore@yourwebsite.com" },
+    Mogappair: { phone: "044-26560599", email: "ambattur@palepugroup.com" },
+    Tambaram: { phone: "044-2241 1141", email: "tambaram@palepugroup.com" },
+    Madurai: { phone: "0452-258 6550, 4393462", email: "vmahesh@palepugroup.com" },
+    Coimbatore: { phone: "0422-4033100", email: "pppl_cbe@yahoo.in" },
     Kanchipuram: { phone: "044 2723 3710", email: "kanchipuram@yourwebsite.com" },
   };
 
