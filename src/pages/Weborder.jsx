@@ -15,48 +15,46 @@ const Weborder = () => {
       name: "Mylapore Branch",
       location: "Chennai, Tamil Nadu",
       orderLinks: [
-        { name: "Order Link 1", url: "https://example.com/mylapore-order1", color: "#dbe0fe", borderColor: "#0123FF" },
-        { name: "Order Link 2", url: "https://example.com/mylapore-order2", color: "#e6d1f0", borderColor: "#8F26B8" },
+        { name: "Order Link 1", url: "http://202.83.25.111/onlineorder/", color: "#dbe0fe", borderColor: "#0123FF" },
+        { name: "Order Link 2", url: "http://210.18.182.18/onlineorder/", color: "#e6d1f0", borderColor: "#8F26B8" },
       ],
     },
     {
       name: "Mogappair Branch",
       location: "Chennai, Tamil Nadu",
       orderLinks: [
-        { name: "Order Link 1", url: "https://example.com/mogappair-order1", color: "#dbe0fe", borderColor: "#0123FF" },
-        { name: "Order Link 2", url: "https://example.com/mogappair-order2", color: "#e6d1f0", borderColor: "#8F26B8" },
+        { name: "Order Link 1", url: "http://210.18.177.236/onlineorder/", color: "#dbe0fe", borderColor: "#0123FF" },
+        { name: "Order Link 2", url: "http://49.207.180.145/onlineorder/", color: "#e6d1f0", borderColor: "#8F26B8" },
       ],
     },
     {
       name: "Tambaram Branch",
       location: "Chennai, Tamil Nadu",
       orderLinks: [
-        { name: "Order Link 1", url: "https://example.com/tambaram-order1", color: "#dbe0fe", borderColor: "#0123FF" },
-        { name: "Order Link 2", url: "https://example.com/tambaram-order2", color: "#e6d1f0", borderColor: "#8F26B8" },
+        { name: "Order Link 1", url: "http://210.18.133.36:8080/liveordertab/", color: "#dbe0fe", borderColor: "#0123FF" },
+        { name: "Order Link 2", url: "http://49.207.184.140:8080/liveordertab/", color: "#e6d1f0", borderColor: "#8F26B8" },
       ],
     },
     {
       name: "Madurai Branch",
-      location: "Chennai, Tamil Nadu",
+      location: "Tamil Nadu",
       orderLinks: [
-        { name: "Order Link 1", url: "https://example.com/tambaram-order1", color: "#dbe0fe", borderColor: "#0123FF" },
-        { name: "Order Link 2", url: "https://example.com/tambaram-order2", color: "#e6d1f0", borderColor: "#8F26B8" },
+        { name: "Order Link 1", url: "http://103.219.207.84/onlineorder/", color: "#dbe0fe", borderColor: "#0123FF" },
       ],
     },
     {
       name: "Coimbatore Branch",
-      location: "Chennai, Tamil Nadu",
+      location: "Tamil Nadu",
       orderLinks: [
-        { name: "Order Link 1", url: "https://example.com/tambaram-order1", color: "#dbe0fe", borderColor: "#0123FF" },
-        { name: "Order Link 2", url: "https://example.com/tambaram-order2", color: "#e6d1f0", borderColor: "#8F26B8" },
+        { name: "Order Link 1", url: "http://49.204.233.88:8080/liveorder", color: "#dbe0fe", borderColor: "#0123FF" },
       ],
     },
     {
       name: "Kanchipuram Branch",
-      location: "Chennai, Tamil Nadu",
+      location: "Tamil Nadu",
       orderLinks: [
-        { name: "Order Link 1", url: "https://example.com/tambaram-order1", color: "#dbe0fe", borderColor: "#0123FF" },
-        { name: "Order Link 2", url: "https://example.com/tambaram-order2", color: "#e6d1f0", borderColor: "#8F26B8" },
+        { name: "Order Link 1", url: "https://www.palepukpmweborder.com/", color: "#dbe0fe", borderColor: "#0123FF" },
+        { name: "Order Link 2", url: "http://202.170.206.232/liveorder/", color: "#e6d1f0", borderColor: "#8F26B8" },
       ],
     },
   ];

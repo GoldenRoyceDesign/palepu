@@ -1,52 +1,62 @@
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+    .branch-order
+    .branch-col3 {
+        flex-direction: column !important;
+    }
+}
+
 @media screen and (max-width: 767px) {
-    .branch-order .branch-col1, .branch-col2, .branch-col3 {
-        width: 100%;
-      }
-      
-      .carousel-caption h1{
+
+    .branch-order .branch-col1,
+    .branch-col2,
+    .branch-col3 {
+        width: 100% !important;
+    }
+
+    .carousel-caption h1 {
         font-size: 2.5rem !important;
     }
 
 
-    .stats-container .row .sec-text{
+    .stats-container .row .sec-text {
         text-align: center !important;
     }
 
-    .testimonials-container .testimonial-card{
+    .testimonials-container .testimonial-card {
         flex-direction: column !important;
     }
 
-    .footer .col-md-4{
+    .footer .col-md-4 {
         align-items: start !important;
         text-align: left !important;
     }
 }
 
-@media screen and (max-width: 500px){
-    .carousel-caption{
+@media screen and (max-width: 500px) {
+    .carousel-caption {
         top: 40% !important;
         align-items: center !important;
         text-align: center !important;
     }
 
-    .carousel-caption h1{
+    .carousel-caption h1 {
         font-size: 2rem !important;
     }
 
-    .carousel-caption p{
+    .carousel-caption p {
         font-size: 1rem !important;
     }
 
-    .custom-arrow{
+    .custom-arrow {
         border: none !important;
     }
 
-    .home{
+    .home {
         margin: 10px !important;
         padding: 0 !important;
     }
 
-    .home .home-order-col2{
+    .home .home-order-col2 {
         flex-direction: column;
         justify-content: left !important;
         align-items: flex-start !important;
@@ -54,26 +64,30 @@
 
     .testimonials-track {
         display: flex;
-        animation: scroll 10s linear infinite; /* Smooth, infinite scrolling */
-      }
+        animation: scroll 10s linear infinite;
+        /* Smooth, infinite scrolling */
+    }
 
 
-      @keyframes scroll {
+    @keyframes scroll {
         from {
-          transform: translateX(0);
+            transform: translateX(0);
         }
+
         to {
-          transform: translateX(-200%); /* Scroll half the track length (duplicates cover the rest) */
+            transform: translateX(-200%);
+            /* Scroll half the track length (duplicates cover the rest) */
         }
     }
 
-    .review-layout{
+    .review-layout {
         flex-direction: column;
     }
 
     .review-content {
-        flex: 1; /* Takes the remaining space */
+        flex: 1;
+        /* Takes the remaining space */
         min-height: 200px;
-      }
-      
+    }
+
 }
