@@ -4,15 +4,22 @@ import { motion } from "framer-motion";
 const Chatbot = () => {
   const [step, setStep] = useState("start");
   const [showChat, setShowChat] = useState(false);
+  const [selectedDepartment, setSelectedDepartment] = useState(null);
+  const [selectedBranch, setSelectedBranch] = useState(null);
+
+  const departments = [
+    "Queries or Escalations",
+    "HR",
+    "Web Orders",
+    "Accounts",
+  ];
 
   const branches = {
-    Mylapore: { phone: "9940018292", email: "sales@palepugroup.com" },
-    Corporate_Office: { phone: "044-24672711/12/13/14", email: "corporate@yourwebsite.com" },
-    Mogappair: { phone: "9445345025", email: "ambattur@palepugroup.com" },
-    Tambaram: { phone: "8925926686", email: "tambaram@palepugroup.com" },
-    Madurai: { phone: "8870388604", email: "vmahesh@palepugroup.com" },
-    Coimbatore: { phone: "(0422) 3508098", email: "pppl_cbe@yahoo.in" },
-    Kanchipuram: { phone: "044 2723 3710", email: "kanchipuram@yourwebsite.com" },
+    "Mylapore": { phone: "9940018292", email: "sales@palepugroup.com" },
+    "Mogappair": { phone: "9445345025", email: "ambattur@palepugroup.com" },
+    "Tambaram": { phone: "8925926686", email: "tambaram@palepugroup.com" },
+    "Madurai": { phone: "8870388604", email: "vmahesh@palepugroup.com" },
+    "Coimbatore": { phone: "(0422) 3508098", email: "pppl_cbe@yahoo.in" },
   };
 
   return (
@@ -38,43 +45,60 @@ const Chatbot = () => {
           <div className="chat-body">
             {step === "start" && (
               <>
-                <p>👋 Hi! How can I help you?</p>
-                <button onClick={() => setStep("findBranch")}>
-                  📍 Find a Branch
-                </button>
-                <button onClick={() => (window.location.href = "/contact")}>
-                  📞 Contact Us
-                </button>
+                <p className="fw-bold">👋 Welcome to Palepu Pharma!</p>
+                <p>How can we assist you today? Please choose the department you’d like to contact:</p>
+                {departments.map((dept) => (
+                  <button
+                    key={dept}
+                    onClick={() => {
+                      setSelectedDepartment(dept);
+                      setStep("selectBranch");
+                    }}
+                  >
+                    {dept}
+                  </button>
+                ))}
               </>
             )}
 
-            {step === "findBranch" && (
+            {step === "selectBranch" && selectedDepartment && (
               <>
-                <p>Which branch are you looking for?</p>
+                <p>Great! Now, please select your preferred branch:</p>
                 {Object.keys(branches).map((branch) => (
-                  <button key={branch} onClick={() => setStep(branch)}>
-                    {branch}
+                  <button
+                    key={branch}
+                    onClick={() => {
+                      setSelectedBranch(branch);
+                      setStep("branchDetails");
+                    }}
+                  >
+                    {branch} Branch
                   </button>
                 ))}
                 <button onClick={() => setStep("start")}>⬅️ Go Back</button>
               </>
             )}
 
-            {Object.keys(branches).map(
-              (branch) =>
-                step === branch && (
-                  <>
-                    <p>📍 {branch} Branch</p>
-                    <p>📞 {branches[branch].phone}</p>
-                    <p>📧 {branches[branch].email}</p>
-                    <button onClick={() => setStep("findBranch")}>
-                      🔙 Choose Another Branch
-                    </button>
-                    <button onClick={() => setStep("start")}>
-                      🔚 End Chat
-                    </button>
-                  </>
-                )
+            {step === "branchDetails" && selectedBranch && (
+              <>
+                <p>Here are the contact details for your selected branch:</p>
+                <p><strong>Branch:</strong> {selectedBranch} Branch</p>
+                <p><strong>Email:</strong> {branches[selectedBranch].email}</p>
+                <p><strong>Phone/WhatsApp:</strong> {branches[selectedBranch].phone}</p>
+                
+                <p><strong>Need more help?</strong></p>
+                <p>If you’re unsure or need additional information, feel free to visit our <a href="/contact">Contact Us</a> page.</p>
+
+                <button onClick={() => setStep("selectBranch")}>🔙 Choose Another Branch</button>
+                <button onClick={() => setStep("end")}>🔚 End Chat</button>
+              </>
+            )}
+
+            {step === "end" && (
+              <>
+                <p>Thank you for contacting Palepu Pharma! We’re here to help. Have a great day! 😊</p>
+                <button onClick={() => setStep("start")}>🔄 Start Over</button>
+              </>
             )}
           </div>
         </motion.div>
@@ -104,6 +128,7 @@ const Chatbot = () => {
           position: fixed;
           bottom: 80px;
           right: 20px;
+          font-size: 14px;
         }
         .chat-header {
           background: #134C79;
