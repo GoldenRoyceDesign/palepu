@@ -5,6 +5,7 @@ import location from '../assets/location-vector.png'
 import contactvec from '../assets/contact-vector.png'
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Chatbot from '../component/Chatbot'
 
 const Contact = () => {
 
@@ -189,6 +190,9 @@ const Contact = () => {
           </div>
         </section>
       </div>
+
+
+      <Chatbot />
     </>
   )
 }

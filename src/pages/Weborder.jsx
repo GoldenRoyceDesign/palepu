@@ -3,6 +3,7 @@ import weborder from '../assets/weborder.png'
 import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Chatbot from '../component/Chatbot';
 
 const Weborder = () => {
 
@@ -138,6 +139,9 @@ const Weborder = () => {
           </div>
         </div>
       </section>
+
+
+      <Chatbot />
     </>
   )
 }

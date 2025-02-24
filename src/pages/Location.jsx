@@ -20,6 +20,7 @@ import call from '../assets/call-emoji.png'
 import location from '../assets/location-emoji.png'
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Chatbot from "../component/Chatbot";
 
 
 const branches = [
@@ -149,7 +150,7 @@ const BranchCard = ({ branch }) => (
         </div>
 
         <div className="d-flex align-items-center gap-2">
-          <img src={mail} alt="mail-icon"  style={{ marginTop: "-15px" }} />
+          <img src={mail} alt="mail-icon" style={{ marginTop: "-15px" }} />
           <p><a href={`mailto:${branch.email}`}>{branch.email}</a></p>
         </div>
 
@@ -163,16 +164,20 @@ const BranchCard = ({ branch }) => (
 const Location = () => {
 
   useEffect(() => {
-      AOS.init({ duration: 1000, once: false });
-    }, []);
+    AOS.init({ duration: 1000, once: false });
+  }, []);
 
-  return(
+  return (
     <div className="container mt-4">
       {branches.map((branch, index) => (
         <BranchCard key={index} branch={branch} />
       ))}
+
+      <Chatbot />
     </div>
+
+
   );
-} 
+}
 
 export default Location;

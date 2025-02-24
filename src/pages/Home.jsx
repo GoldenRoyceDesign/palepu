@@ -6,11 +6,12 @@ import company1 from '../assets/company1.png'
 import company2 from '../assets/company2.png'
 import company3 from '../assets/company3.png'
 import company4 from '../assets/company4.png'
-import WhatsAppButton from '../component/WhatsAppButton'
+// import WhatsAppButton from '../component/WhatsAppButton'
 import centerlogo from '../assets/center-logo.png'
 import Testimonials from '../component/Testimonials'
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Chatbot from '../component/Chatbot'
 
 const Home = () => {
 
@@ -24,7 +25,7 @@ const Home = () => {
         <CustomCarousel />
       </section>
 
-      <section style={{background: '#dfe9f3'}} id='home'>
+      <section style={{ background: '#dfe9f3' }} id='home'>
         <div className='container about pt-5'>
           <div className='row'>
             <div className='col-md-6 d-flex flex-column gap-3'>
@@ -44,7 +45,7 @@ const Home = () => {
                 the company one of the largest distributors in the state of Tamil Nadu.</p>
               <p data-aos="fade-right"><strong>From Day 1 of our business in 1960 till date, with six decades passed, we still follow the same mantra:</strong></p>
             </div>
-            <div className='col-md-6 d-flex justify-content-center align-items-center'  data-aos="fade-up">
+            <div className='col-md-6 d-flex justify-content-center align-items-center' data-aos="fade-up">
               <img src={about} alt='about-image' className='img-fluid w-75' />
             </div>
           </div>
@@ -126,16 +127,16 @@ const Home = () => {
         <Testimonials />
       </section>
 
-      
 
-      
+
+
 
       <section className='container mt-5 mb-5'>
         <h1 className='text-center' data-aos="fade-right"><strong>Palepu Group Companies*</strong></h1>
 
         <div className='mt-5'>
 
-        <div className='text-center mb-5'>
+          <div className='text-center mb-5'>
             <p>Among Top 3 procurers for the largest 20 companies</p>
           </div>
 
@@ -144,7 +145,7 @@ const Home = () => {
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company1} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
                 <a href='https://shanbalajipharma.com/' target='_blank' rel="noreferrer">
-                <button className='company-btn ps-4 pe-4'>OPEN LINK</button></a>
+                  <button className='company-btn ps-4 pe-4'>OPEN LINK</button></a>
               </div>
             </div>
 
@@ -152,7 +153,7 @@ const Home = () => {
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company2} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
                 <a href='https://www.lphpharma.com/' target='_blank' rel="noreferrer">
-                <button className='company-btn ps-4 pe-4'>OPEN LINK</button></a>
+                  <button className='company-btn ps-4 pe-4'>OPEN LINK</button></a>
               </div>
             </div>
 
@@ -160,7 +161,7 @@ const Home = () => {
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company4} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
                 <a href='https://ammanpharma.in/' target='_blank' rel="noreferrer">
-                <button className='company-btn ps-4 pe-4'>OPEN LINK</button></a>
+                  <button className='company-btn ps-4 pe-4'>OPEN LINK</button></a>
               </div>
             </div>
 
@@ -168,7 +169,7 @@ const Home = () => {
               <div className='d-flex flex-column justify-content-center align-items-center gap-4'>
                 <img src={company3} alt='sponser-image' className='img-fluid' style={{ height: '140px' }} />
                 <a href='https://www.medihauxe.com/' target='_blank' rel="noreferrer">
-                <button className='company-btn ps-4 pe-4'>OPEN LINK</button></a>
+                  <button className='company-btn ps-4 pe-4'>OPEN LINK</button></a>
               </div>
             </div>
           </div>
@@ -176,9 +177,12 @@ const Home = () => {
         </div>
       </section>
 
-      <section>
+      {/* <section>
         <WhatsAppButton />
-      </section>
+      </section> */}
+
+
+      <Chatbot />
     </>
 
   )
