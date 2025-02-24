@@ -306,7 +306,7 @@ const Chatbot = () => {
                   <button
                     key={branch.name}
                     onClick={() => {
-                      window.open(`https://wa.me/${branch.phone}`, "_blank");
+                      window.open(`https://wa.me/91${branch.phone}`, "_blank");
                     }}
                   >
                     {branch.name} Branch
