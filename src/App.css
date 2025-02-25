@@ -453,6 +453,18 @@
   overflow: hidden;
 }
 
+.contact-bg{
+  background-image: url('./assets/contact-bg.png');
+  background-position: center;
+  background-size: cover;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
 .contact > .row{
   background: linear-gradient(to right, #D3E7EE, #074881);
   color: white;

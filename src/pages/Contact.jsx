@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import contact from '../assets/contact.png'
+// import contact from '../assets/contact.png'
 // import logo from '../assets/logo.png'
 // import location from '../assets/location-vector.png'
 // import contactvec from '../assets/contact-vector.png'
@@ -54,7 +54,7 @@ const Contact = () => {
   return (
     <>
       <div className='contact'>
-        <div className='row d-flex justify-content-center align-items-center pt-5 pb-4'>
+        {/* <div className='row d-flex justify-content-center align-items-center pt-5 pb-4'>
           <div className='col-md-6' data-aos="zoom-in-up">
             <img src={contact} alt='contact-image' className='img-fluid' />
           </div>
@@ -64,6 +64,10 @@ const Contact = () => {
             <p>Reference site about Lorem Ipsum, giving information on its origins, as well
               as a random Lipsum generator.</p>
           </div>
+        </div> */}
+
+        <div className='contact-bg p-5 text-center d-flex justify-content-center align-items-center'>
+          <h1 className='text-white' data-aos="zoom-in"><strong>CONTACT US</strong></h1>
         </div>
 
 
