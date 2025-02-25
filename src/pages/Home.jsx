@@ -26,24 +26,15 @@ const Home = () => {
       </section>
 
       <section style={{ background: '#dfe9f3' }} id='home'>
-        <div className='container about pt-5'>
+        <div className='container about pt-5 pb-5'>
           <div className='row'>
-            <div className='col-md-6 d-flex flex-column gap-3'>
+            <div className='col-md-6 d-flex flex-column gap-3 mb-4'>
               <h2 data-aos="fade-right"><strong>Palepu Pharma Distributors Private Limited</strong>
                 <span style={{ fontSize: '16px' }}> (formerly known as Palepu & Co.),</span> </h2>
-              <p data-aos="fade-right">is one of the largest distributors in the state of Tamil Nadu. Dealing with more
-                than 22,000+ products, from 400+ Pharmaceutical Companies, both
-                Multinational and Indian, and serving 5000+ customers in both Retail and
-                Hospital-based pharmacies</p>
+              <p data-aos="fade-right">stands as a trusted name in the pharmaceutical distribution landscape, proudly serving as one of the largest and most reliable distributors in the state of Tamil Nadu. With decades of experience and a steadfast commitment to excellence, we have built a legacy of delivering high-quality pharmaceutical products to healthcare providers, pharmacies, and patients across the region.</p>
               <p data-aos="fade-right">
-                Mr. V. S. Palepu, who was lauded as a visionary during his time in the pharma
-                fraternity, began his foray into pharmaceutical distribution with his collaboration
-                with Mr. Nebling of Hoechst Pharmaceuticals, Germany who encouraged him to
-                be a distributor for the company. This marked the humble beginning of Palepu &
-                Co. in Tamil Nadu. Under his tenure, Palepu has grown immensely with the
-                establishment of 5 Branches and tying up with 4 associate companies, making
-                the company one of the largest distributors in the state of Tamil Nadu.</p>
-              <p data-aos="fade-right"><strong>From Day 1 of our business in 1960 till date, with six decades passed, we still follow the same mantra:</strong></p>
+              As a cornerstone of the healthcare ecosystem, we specialize in the seamless distribution of a wide range of medicines, healthcare products, and medical supplies. Our extensive network, state-of-the-art infrastructure, and unwavering focus on customer satisfaction have positioned us as a preferred partner for leading pharmaceutical manufacturers and healthcare institutions.</p>
+              <p data-aos="fade-right"><strong>At Palepu Pharma, we are driven by a mission to ensure the timely and efficient delivery of life-saving medications, empowering healthcare professionals to provide the best possible care to their patients. Our dedication to quality, reliability, and innovation continues to fuel our growth, making us a pivotal player in the pharmaceutical distribution industry.</strong></p>
             </div>
             <div className='col-md-6 d-flex justify-content-center align-items-center' data-aos="fade-up">
               <img src={about} alt='about-image' className='img-fluid w-75' />
@@ -58,31 +49,31 @@ const Home = () => {
           <div className="content">
             <div className="row align-items-center">
               {/* Left Side */}
-              <div className="col-md-5 text-white text-start d-flex flex-column gap-5 sec-text" data-aos="zoom-in-down">
+              <div className="col-md-5 text-white text-start d-flex flex-column justify-content-center align-items-center sec-text" data-aos="zoom-in-down">
                 <div>
-                  <h4>7 Locations</h4>
-                  <p>Quis id sapiente voluptatem quo sint reprehenderit eos illo sequi.</p>
+                  <h4>Extensive Network</h4>
+                  <p>Serving Tamil Nadu through 7 strategically positioned distribution centres.</p>
                 </div>
                 <div>
-                  <h4>200+ Salesmen</h4>
-                  <p>Quis id sapiente voluptatem quo sint reprehenderit eos illo sequi.</p>
+                  <h4>Comprehensive Coverage</h4>
+                  <p>A team of 200+ sales representatives ensuring widespread market reach.</p>
                 </div>
               </div>
 
               {/* Center Logo */}
-              <div className="col-md-2 text-center" data-aos="zoom-in">
+              <div className="col-md-2 text-center d-flex flex-column justify-content-center align-items-center" data-aos="zoom-in">
                 <img src={centerlogo} alt="Company Logo" className="center-logo" />
               </div>
 
               {/* Right Side */}
-              <div className="col-md-5 text-white text-end d-flex flex-column gap-5 sec-text" data-aos="zoom-in-up">
+              <div className="col-md-5 text-white text-end d-flex flex-column justify-content-center align-items-center sec-text" data-aos="zoom-in-up">
                 <div>
-                  <h4>500+ Staffs</h4>
-                  <p>Quis id sapiente voluptatem quo sint reprehenderit eos illo sequi.</p>
+                  <h4>Dedicated Support</h4>
+                  <p>Over 500 skilled employees committed to seamless service.</p>
                 </div>
                 <div>
-                  <h4>10,000+ Pharmacies</h4>
-                  <p>Quis id sapiente voluptatem quo sint reprehenderit eos illo sequi.</p>
+                  <h4>Trusted Partner</h4>
+                  <p>Distributing to 10,000+ pharmacies, ensuring reliable supply.</p>
                 </div>
               </div>
             </div>
@@ -95,18 +86,14 @@ const Home = () => {
         <div className='container mt-5 mission'>
           <div className='row'>
             <div className='col-md-6 mb-4'>
-              <h2 data-aos="fade-right">We are Palepu Pharma</h2>
+              <h2 data-aos="fade-right">What We Stand For</h2>
               <div className='border rounded-2 p-3 mt-4 mb-4' data-aos="zoom-in-right">
                 <h5 className='fw-bold'>MISSION</h5>
-                <p>We source directly from manufacturers, selling only to
-                  licensed pharmacies or hospitals, ensuring transparency
-                  and efficient supply chain operations.</p>
+                <p>To ensure the seamless and reliable distribution of pharmaceuticals fostering strong partnerships with pharmacies and healthcare providers to enhance patient well-being.</p>
               </div>
               <div className='border rounded-2 p-3 mb-4' data-aos="zoom-in-right">
                 <h5 className='fw-bold'>VISION</h5>
-                <p>We source directly from manufacturers, selling only to
-                  licensed pharmacies or hospitals, ensuring transparency
-                  and efficient supply chain operations.</p>
+                <p>To be the most trusted and respected pharmaceutical distributor in Tamil Nadu, recognized for our unwavering commitment to excellence and innovation in healthcare logistics.</p>
               </div>
               {/* <div className='border rounded-2 p-3 mb-4'>
                 <h5>VALUES</h5>
@@ -132,13 +119,9 @@ const Home = () => {
 
 
       <section className='container mt-5 mb-5'>
-        <h1 className='text-center' data-aos="fade-right"><strong>Palepu Group Companies*</strong></h1>
+        <h1 className='text-center' data-aos="fade-right"><strong>Our Subsidiaries</strong></h1>
 
         <div className='mt-5'>
-
-          <div className='text-center mb-5'>
-            <p>Among Top 3 procurers for the largest 20 companies</p>
-          </div>
 
           <div className='row'>
             <div className='col-md-3 mb-4 p-4' data-aos="fade-up" id='partner'>

@@ -63,8 +63,8 @@ const Weborder = () => {
   return (
     <>
       <section>
-        <div className='weborder p-5'>
-          <h1 className='text-white'><strong>Orders Product Online</strong></h1>
+        <div className='weborder p-5 text-center d-flex justify-content-center align-items-center'>
+          <h1 className='text-white' data-aos="zoom-in"><strong>ORDER PRODUCT ONLINE</strong></h1>
         </div>
 
         <div className='container mt-5'>
@@ -115,6 +115,8 @@ const Weborder = () => {
                   Contact our staff and we’ll help you place your first online order at
                   the nearest branch.
                 </p>
+                <Link to='/contact'>
+                    <button className="btn-custom mt-3">Contact Us</button></Link>
               </div>
             </div>
 
@@ -130,8 +132,7 @@ const Weborder = () => {
                   <h5 className="fw-bold">"Your Trusted Online Pharmacy"</h5>
                   <hr></hr>
                   <h6 className="text-white">Quick, Easy, Reliable!</h6>
-                  <Link to='/contact'>
-                    <button className="btn-custom mt-4">Contact Us</button></Link>
+                  
                 </div>
               </div>
             </div>

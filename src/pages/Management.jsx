@@ -8,22 +8,22 @@ import Chatbot from '../component/Chatbot';
 const Management = () => {
 
   useEffect(() => {
-      AOS.init({ duration: 1000, once: false });
-    }, []);
+    AOS.init({ duration: 1000, once: false });
+  }, []);
 
   return (
     <>
       <section>
-        <div className='management text-center'>
-          <h1 className='fw-bold' data-aos="zoom-in">AT PALEPU PHARMA,</h1>
-          <p data-aos="zoom-out">EXCELLENCE STARTS AT THE TOP <br></br>
-            and shows up in everything we do</p>
+        <div className='management text-center manage-cont'>
+          <h1 className='fw-bold' data-aos="zoom-in">OUR MANAGEMENT</h1>
         </div>
 
-        <div className='text-center mt-5 manage-cont' data-aos="fade-right">
-          <p>OUR MANAGEMENT</p>
-          <h3 className='mt-4 fw-bold'> Meet the People Behind <br></br>
-            PalepuPharma</h3>
+        <div className='text-center mt-5' data-aos="fade-right">
+          <h1 className='mt-4 fw-bold'> Meet the People Behind <br></br>
+            Palepu Pharma</h1>
+          <h4 className='fw-bold mt-3' data-aos="zoom-in">AT PALEPU PHARMA,</h4>
+          <p data-aos="zoom-out">EXCELLENCE STARTS AT THE TOP <br></br>
+            and shows up in everything we do</p>
         </div>
 
         <div className='container mt-5 mb-5 managing-director'>

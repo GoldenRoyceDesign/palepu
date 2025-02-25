@@ -69,7 +69,7 @@ const Testimonials = () => {
           {testimonials.slice(index, index + itemsPerPage).map((testimonial) => (
             <motion.div
               key={testimonial.id}
-              className="col-12 mb-4"
+              className="col-12 col-md-6 mb-4"
               initial={{ opacity: 0, x: 50 }} // Start from right
               animate={{ opacity: 1, x: 0 }} // Fade in to position
               exit={{ opacity: 0, x: -50 }} // Exit to left

@@ -142,11 +142,10 @@
 .stats-container {
   background: url("./assets/home-counter.png") center/cover no-repeat;
   width: 100%;
-  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 50px;
   text-align: center;
 }
 
@@ -162,11 +161,15 @@
 }
 
 .stats-container p{
-  font-size: 14px;
+  font-size: 16px;
+}
+
+.stats-container .sec-text{
+  gap: 60px;
 }
 
 .stats-container .center-logo {
-  width: 150px; /* Adjust based on your logo */
+  width: 200px; /* Adjust based on your logo */
   padding: 15px;
   border-radius: 10px;
 }
@@ -391,7 +394,7 @@
   color: white;
 }
 
-.manage-cont p{
+.manage-cont{
   letter-spacing: 10px;
   font-weight: 500;
 }
@@ -457,14 +460,19 @@
 
 .contact-form{
   background: #D4EBFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-form input{
   border: 1px solid #327DC0;
+  height: 50px;
 }
 
 .contact-form select{
   border: 1px solid #327DC0;
+  height: 50px;
 }
 
 .footer-info {
