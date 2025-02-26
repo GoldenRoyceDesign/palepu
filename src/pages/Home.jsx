@@ -46,7 +46,7 @@ const Home = () => {
       <section className='home-counter'>
         <div className="stats-container">
           <div className="content">
-          <h2 className='text-white fw-bold pb-5'>Snippet Section</h2>
+          <h2 className='text-white fw-bold pb-5' style={{textAlign: 'left'}}>Snippet Section</h2>
             <div className="row align-items-center">
               {/* Left Side */}
               <div className="col-md-5 text-white text-start d-flex flex-column justify-content-center align-items-center sec-text" data-aos="zoom-in-down">
