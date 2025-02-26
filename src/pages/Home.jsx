@@ -29,9 +29,8 @@ const Home = () => {
         <div className='container about pt-5 pb-5'>
           <div className='row'>
             <div className='col-md-6 d-flex flex-column gap-3 mb-4'>
-              <h2 data-aos="fade-right"><strong>Palepu Pharma Distributors Private Limited</strong>
-                <span style={{ fontSize: '16px' }}> (formerly known as Palepu & Co.),</span> </h2>
-              <p data-aos="fade-right">stands as a trusted name in the pharmaceutical distribution landscape, proudly serving as one of the largest and most reliable distributors in the state of Tamil Nadu. With decades of experience and a steadfast commitment to excellence, we have built a legacy of delivering high-quality pharmaceutical products to healthcare providers, pharmacies, and patients across the region.</p>
+              <h2 data-aos="fade-right"><strong>Introduction</strong></h2>
+              <p data-aos="fade-right"><span style={{ fontWeight: 'bold' }}>Palepu Pharma Distributors Private Limited</span> (formerly known as Palepu & Co.) stands as a trusted name in the pharmaceutical distribution landscape, proudly serving as one of the largest and most reliable distributors in the state of Tamil Nadu. With decades of experience and a steadfast commitment to excellence, we have built a legacy of delivering high-quality pharmaceutical products to healthcare providers, pharmacies, and patients across the region.</p>
               <p data-aos="fade-right">
               As a cornerstone of the healthcare ecosystem, we specialize in the seamless distribution of a wide range of medicines, healthcare products, and medical supplies. Our extensive network, state-of-the-art infrastructure, and unwavering focus on customer satisfaction have positioned us as a preferred partner for leading pharmaceutical manufacturers and healthcare institutions.</p>
               <p data-aos="fade-right"><strong>At Palepu Pharma, we are driven by a mission to ensure the timely and efficient delivery of life-saving medications, empowering healthcare professionals to provide the best possible care to their patients. Our dedication to quality, reliability, and innovation continues to fuel our growth, making us a pivotal player in the pharmaceutical distribution industry.</strong></p>
@@ -47,6 +46,7 @@ const Home = () => {
       <section className='home-counter'>
         <div className="stats-container">
           <div className="content">
+          <h2 className='text-white fw-bold pb-5'>Snippet Section</h2>
             <div className="row align-items-center">
               {/* Left Side */}
               <div className="col-md-5 text-white text-start d-flex flex-column justify-content-center align-items-center sec-text" data-aos="zoom-in-down">
